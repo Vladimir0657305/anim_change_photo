@@ -53,7 +53,7 @@
     top: -2px;
 }
 
-/* RADIO BUTTON */
+/* ======================= RADIO BUTTON ======================================== */
 .radiowave {
     position: relative;
     display: inline-block;
@@ -121,4 +121,207 @@
         height: 160vw;
         opacity: 0;
     }
+}
+
+/*  ===== scramble-text =================== */
+.scramble-text {
+    font-weight: 100;
+    font-size: 14px;
+    color: #337AB7;
+    color: #cc0000;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dud-text {
+    color: #000;
+}
+
+/* --==============Дрожащий текст==================--*/
+/* Дрожащий блок HTML и СSS коды такие же, */
+/* как и у примера с текстом. Блок для которого накладывается эффект дрожания должен быть помещен в контейнер: <div class="squiggly"></div> */
+.squiggly {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    text-align: center;
+    color: #337AB7;
+    color: #cc0000;
+    font-size: 60px;
+    line-height: 80px;
+    font-weight: bold;
+    animation: squiggly-anim 0.25s linear infinite;
+}
+
+.squiggly-small {
+    font-size: 26px;
+    line-height: 40px;
+}
+
+@keyframes squiggly-anim {
+    0% {
+        filter: url("#squiggly-0");
+    }
+
+    25% {
+        filter: url("#squiggly-1");
+    }
+
+    50% {
+        filter: url("#squiggly-2");
+    }
+
+    75% {
+        filter: url("#squiggly-3");
+    }
+
+    100% {
+        filter: url("#squiggly-4");
+    }
+}
+
+/* =====================  MASONRY GRID  =========================  */
+.masonry-grid {
+    margin: auto;
+    column-count: 3;
+}
+
+.masonry-grid img,
+.masonry-grid .col-block {
+    max-width: 100%;
+    margin-bottom: 16px;
+    border: 6px solid #BFE2FF;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s linear;
+}
+
+.masonry-grid img:hover,
+.masonry-grid .col-block:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 16px 20px rgba(0, 0, 0, 0.2);
+}
+
+.col-block {
+    padding: 2px 20px;
+}
+
+/* И далее остается настроить по вкусу адаптивность, например так:  */
+@media (max-width:700px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width:500px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
+
+/* ======================================== WIGHT NOISY ============================================== */
+.block{
+    width: 100%;
+    height: 300px;
+}
+#noisy-canvas {
+    width: 100%;
+    height: 300px;
+}
+/* ======================================== WIGHT NOISY ============================================== */
+
+/* --==============Анимация графического фона на CSS=======================-- */
+.bg-animation {
+    animation: bg-animation 25s ease-in-out infinite;
+    padding: 160px 20px;
+    text-align: center;
+    background-image: url(images/58025-mozajka_raduga_art.jpg);
+    /* Фоновая картинка */
+    background-repeat: no-repeat;
+    border: 8px solid #BFE2FF;
+    margin: 20px 0;
+    color: #337AB7;
+    color: #cc0000;
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 620px) {
+    .bg-animation {
+        padding: 100px 20px;
+        font-size: 26px;
+    }
+}
+
+@keyframes bg-animation {
+    0% {
+        background-size: 120%;
+        background-position: 50% 50%
+    }
+
+    20% {
+        background-size: 150%;
+        background-position: 0 50%;
+    }
+
+    40% {
+        background-size: 110%;
+        background-position: 20% 80%;
+    }
+
+    60% {
+        background-size: 160%;
+        background-position: 60% 10%;
+    }
+
+    80% {
+        background-size: 120%;
+        background-position: 40% 70%;
+    }
+
+    100% {
+        background-size: 120%;
+        background-position: 50% 50%
+    }
+}
+
+/* ================ РАЗЛЕТАЮЩИЕСЯ ЧАСТИЦЫ ПРИ НАЖАТИИ НА КНОПКУ ========================= */
+particle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.atuin-btn {
+    display: inline-flex;
+    margin: 10px;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto', Тahoma, sans-serif;
+    background: #337AB7;
+    cursor: pointer;
+    border: 2px solid #BFE2FF;
+    outline: 1px solid;
+    outline-color: #337AB7;
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.atuin-btn:hover,
+.atuin-btn:active,
+.atuin-btn:focus {
+    box-shadow: inset 0 0 20px #BFE2FF;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    color: #FFF;
 }
